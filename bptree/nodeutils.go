@@ -44,7 +44,7 @@ func childPointerOffset(index, keySize int) int {
 
 func keyStartOffset(index, keySize, pointerSize int) int {
 	// Key 0 comes exactly after Ptr 0
-	return OffsetFlags + pointerSize + index*(pointerSize+keySize)
+	return OffsetInternal + (index * (pointerSize + keySize))
 }
 
 func GetChildPointerAtIndex(node *TreeNode, index, keySize int) (Pointer, bool) {
