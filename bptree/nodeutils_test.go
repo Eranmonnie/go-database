@@ -364,7 +364,7 @@ func TestNodePointerToAnotherNode(t *testing.T) {
 		t.Fatalf("SetChildPointerAtIndex error: %v", err)
 	}
 
-	// insert a key+pointer entry into the child
+	// insert a pointer+ key entry into the child
 	key := []byte("KEY1")
 	dataPtr := Pointer{Type: TypeData, Position: 999, Chunk: 0}
 	if err := AddPointerKeyAtIndex(child, 0, key, dataPtr.ToBytes(), keySize, PointerBytes); err != nil {
